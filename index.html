@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KandisKita — Direktori UMKM Kecamatan Kandis | Semua Usaha Kandis, Satu Tempat</title>
+<meta name="description" content="KandisKita: direktori UMKM Kecamatan Kandis, Siak, Riau. Cari kuliner, toko, bengkel, salon, percetakan & jasa lokal — langsung chat WhatsApp pemiliknya. Daftar usaha GRATIS.">
+<meta property="og:title" content="KandisKita — Semua Usaha Kandis, Satu Tempat">
+<meta property="og:description" content="Direktori UMKM Kecamatan Kandis: cari usaha lokal, langsung chat WhatsApp pemiliknya. Daftar gratis!">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>">
+<style>
+  :root{
+    --hijau:#14532d; --hijau2:#166534; --hijau-muda:#dcfce7; --kuning:#f59e0b; --kuning-muda:#fef3c7;
+    --teks:#1c2520; --abu:#5b6b61; --garis:#e2e8e4; --bg:#f7f9f7; --putih:#fff; --wa:#22c55e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{color-scheme:light}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--teks);background:var(--bg);line-height:1.55}
+  .proto-bar{background:#111827;color:#fbbf24;text-align:center;padding:8px 12px;font-size:13px;font-weight:600;letter-spacing:.2px}
+  header.site{background:var(--putih);border-bottom:1px solid var(--garis);position:sticky;top:0;z-index:40}
+  .nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;gap:12px}
+  .logo{font-size:24px;font-weight:800;color:var(--hijau)} .logo span{color:var(--kuning)}
+  .logo small{display:block;font-size:11px;font-weight:600;color:var(--abu);letter-spacing:.4px}
+  .btn{display:inline-block;border:none;cursor:pointer;border-radius:10px;padding:10px 18px;font-weight:700;font-size:14px;text-decoration:none;transition:.15s}
+  .btn-wa{background:var(--wa);color:#fff} .btn-wa:hover{background:#16a34a}
+  .btn-kuning{background:var(--kuning);color:#231a00} .btn-kuning:hover{background:#d97706;color:#fff}
+  .btn-garis{background:#fff;border:1.5px solid var(--hijau);color:var(--hijau)}
+  .hero{background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 60%,#15803d 100%);color:#fff;padding:52px 16px 44px;text-align:center}
+  .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;font-weight:800;max-width:720px;margin:0 auto 12px}
+  .hero h1 em{font-style:normal;color:#fcd34d}
+  .hero p{max-width:560px;margin:0 auto 26px;opacity:.92;font-size:16px}
+  .searchbox{max-width:620px;margin:0 auto;background:#fff;border-radius:14px;padding:6px;display:flex;gap:6px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .searchbox input{flex:1;border:none;outline:none;font-size:16px;padding:10px 12px;color:#111827;background:#ffffff;min-width:0}
+  .searchbox input::placeholder{color:#6b7280;opacity:1}
+  .searchbox button{background:var(--kuning);border:none;border-radius:10px;padding:10px 22px;font-weight:800;font-size:15px;cursor:pointer;color:#231a00}
+  .stats{display:flex;justify-content:center;gap:clamp(18px,5vw,48px);margin-top:30px;flex-wrap:wrap}
+  .stats div b{display:block;font-size:24px;color:#fcd34d}
+  .stats div{font-size:13px;opacity:.9}
+  .wrap{max-width:1100px;margin:auto;padding:0 16px}
+  section{padding:38px 0 6px}
+  h2{font-size:24px;color:var(--hijau);margin-bottom:6px}
+  .sub{color:var(--abu);font-size:14.5px;margin-bottom:18px;max-width:640px}
+  .kat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
+  .kat{background:#fff;border:1.5px solid var(--garis);border-radius:14px;padding:16px 8px;text-align:center;cursor:pointer;font-weight:700;font-size:14px}
+  .kat:hover{border-color:var(--hijau2)}
+  .kat .ic{font-size:28px;display:block;margin-bottom:6px}
+  .kat .n{font-size:12px;color:var(--abu);font-weight:600}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .chip{border:1.5px solid var(--garis);background:#fff;color:#111827;border-radius:999px;padding:7px 15px;font-size:13.5px;font-weight:700;cursor:pointer}
+  .chip.aktif{background:var(--kuning-muda);color:#111827;border-color:var(--kuning)}
+  .baris-filter{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+  select{padding:9px 12px;border:1.5px solid var(--garis);border-radius:10px;font-size:14px;background:#fff;color:#111827;font-weight:600}
+  select option{background:#fff;color:#111827}
+  .hasil-info{font-size:13.5px;color:var(--abu);margin-left:auto}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding-bottom:10px}
+  .card{background:#fff;border:1px solid var(--garis);border-radius:16px;overflow:hidden;cursor:pointer;transition:.15s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(20,83,45,.12)}
+  .thumb{height:128px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+  .badge{position:absolute;top:10px;left:10px;background:var(--kuning);color:#231a00;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px;letter-spacing:.3px}
+  .badge-verif{background:var(--hijau-muda);color:var(--hijau);top:auto;bottom:10px}
+  .isi{padding:14px 16px 16px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .isi h3{font-size:17px;line-height:1.3}
+  .tag{font-size:12px;font-weight:800;color:var(--hijau2);text-transform:uppercase;letter-spacing:.5px}
+  .meta{font-size:13.5px;color:var(--abu)}
+  .isi .desc{font-size:13.5px;color:#3d4a42;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .buka{font-size:12.5px;font-weight:700}
+  .buka.on{color:#16a34a}.buka.off{color:#dc2626}
+  .cta-daftar{background:var(--kuning-muda);border:1.5px dashed var(--kuning);border-radius:18px;padding:28px;text-align:center;margin:34px 0}
+  .cta-daftar h2{color:#92400e}
+  .cta-daftar p{max-width:520px;margin:6px auto 18px;color:#57534e;font-size:15px}
+  .langkah{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:8px}
+  .langkah div{background:#fff;border:1px solid var(--garis);border-radius:14px;padding:18px}
+  .langkah b{color:var(--hijau);display:block;margin-bottom:4px}
+  .langkah span{font-size:26px}
+  footer{background:var(--hijau);color:#d1fae5;margin-top:44px;padding:30px 16px;text-align:center;font-size:14px}
+  footer b{color:#fff}
+  .kosong{text-align:center;color:var(--abu);padding:36px 0;font-size:15px;display:none}
+  .promo-strip{background:linear-gradient(90deg,#e11d48,#f43f5e);color:#fff;font-size:13px;font-weight:700;padding:8px 12px;border-radius:10px;display:flex;gap:7px;align-items:flex-start;line-height:1.35}
+  .promo-strip span{flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .promo-box{background:#fff1f2;border:1.5px solid #fda4af;border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:14.5px}
+  .promo-box b{color:#be123c;display:block;font-size:12px;letter-spacing:.6px;margin-bottom:2px}
+  .info-pintar{display:none;background:#eff6ff;border:1.5px solid #bfdbfe;color:#1e3a8a;border-radius:12px;padding:10px 14px;font-size:13.5px;margin-bottom:14px}
+  .info-pintar.tampil{display:block}
+  .info-pintar b{color:#1d4ed8}
+  .carousel{position:relative}
+  .track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;scroll-behavior:smooth}
+  .track::-webkit-scrollbar{display:none}
+  .slide{flex:0 0 min(540px,88%);scroll-snap-align:start;border-radius:18px;padding:22px;color:#fff;cursor:pointer;position:relative;overflow:hidden;min-height:168px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+  .slide .iklan{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.92);color:#111827;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.5px}
+  .slide .kat{font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;opacity:.85}
+  .slide h3{font-size:23px;line-height:1.2}
+  .slide .promo-besar{font-size:16.5px;font-weight:700;line-height:1.4}
+  .slide .wil{font-size:13px;opacity:.85}
+  .slide .tombol{margin-top:8px;background:#fff;color:#111827;align-self:flex-start;padding:8px 16px;border-radius:9px;font-weight:800;font-size:13.5px}
+  .car-nav{display:flex;align-items:center;gap:10px;margin-top:8px}
+  .car-btn{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--garis);background:#fff;color:#111827;font-size:17px;cursor:pointer;font-weight:800}
+  .dots{display:flex;gap:6px;margin-left:4px}
+  .dot{width:9px;height:9px;border-radius:50%;background:#cbd5e1;border:none;cursor:pointer;padding:0}
+  .dot.aktif{background:var(--hijau);transform:scale(1.25)}
+  /* modal */
+  .overlay{display:none;position:fixed;inset:0;background:rgba(10,20,14,.6);z-index:60;align-items:flex-end;justify-content:center}
+  .overlay.tampil{display:flex}
+  .modal{background:#fff;width:100%;max-width:560px;max-height:88vh;overflow:auto;border-radius:20px 20px 0 0;padding:0 0 24px;animation:naik .2s ease}
+  @media(min-width:640px){.overlay{align-items:center}.modal{border-radius:20px}}
+  @keyframes naik{from{transform:translateY(24px);opacity:.5}to{transform:none;opacity:1}}
+  .modal .thumb{height:170px;font-size:76px}
+  .modal .m-isi{padding:18px 22px 0}
+  .modal h3{font-size:22px;margin:4px 0 6px}
+  .modal .desc{font-size:15px;color:#3d4a42;margin-bottom:12px}
+  .modal table{width:100%;font-size:14.5px;border-collapse:collapse;margin-bottom:18px}
+  .modal td{padding:7px 0;border-bottom:1px solid var(--garis);vertical-align:top}
+  .modal td:first-child{color:var(--abu);width:110px;font-weight:600}
+  .m-tombol{display:flex;gap:10px;flex-wrap:wrap}
+  .m-tombol a{flex:1;text-align:center;min-width:140px}
+  .tutup{position:absolute;top:12px;right:14px;background:#fff;border:none;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+  .catatan{font-size:12.5px;color:var(--abu);margin-top:14px;background:var(--bg);border-radius:10px;padding:10px 12px}
+</style>
+</head>
+<body>
+
+
+<header class="site">
+  <div class="nav">
+    <div class="logo">Kandis<span>Kita</span><small>DIREKTORI UMKM KECAMATAN KANDIS</small></div>
+    <a class="btn btn-wa" href="https://wa.me/6282283506764?text=Halo%20Admin%20KandisKita%2C%20saya%20mau%20daftarkan%20usaha%20saya%20(gratis)" target="_blank" rel="noopener">+ Daftarkan Usaha — Gratis</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Semua Usaha Kandis, <em>Satu Tempat.</em></h1>
+  <p>Lagi lapar, motor ngadat, atau mau hajatan? Semua yang jualan di Kandis kumpul di sini — tetangga sendiri. Klik usahanya, langsung nyambung ke WhatsApp pemiliknya. Tanpa perantara, tanpa ribet. Gaskeun! 🚀</p>
+  <form class="searchbox" id="formCari">
+    <input id="inputCari" type="search" placeholder="Cari: kue lapis, motor mogok, cuci baju, nikah…" aria-label="Cari usaha">
+    <button type="submit">Gas Cari 🔍</button>
+  </form>
+  <div class="stats">
+    <div><b id="statTotal">12</b>Usaha terdaftar*</div>
+    <div><b>8</b>Kategori</div>
+    <div><b>11</b>Desa / kelurahan</div>
+    <div><b>Rp0</b>Biaya daftar, selamanya</div>
+  </div>
+  <p style="font-size:12px;margin-top:12px;opacity:.75">Baru mulai — target 50 usaha terverifikasi. Usahamu belum ada? Daftarkan gratis di bawah 👇</p>
+</div>
+
+<div class="wrap">
+  <section>
+    <h2>🎉 Promo yang Lagi Asik</h2>
+    <p class="sub">Ini etalase paling depan punya usaha-usaha pilihan (slot berbayar, biar adil kami labeli jujur). Geser-geser aja, atau tunggu — dia jalan sendiri kok. 😄</p>
+    <div class="carousel">
+      <div class="track" id="trackPromo"></div>
+      <div class="car-nav">
+        <button class="car-btn" onclick="geserPromo(-1)" aria-label="Promo sebelumnya">‹</button>
+        <button class="car-btn" onclick="geserPromo(1)" aria-label="Promo berikutnya">›</button>
+        <div class="dots" id="dotsPromo"></div>
+        <span class="hasil-info">Slot berbayar · mulai Rp25rb/bln (usulan)</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Jelajahi Kategori</h2>
+    <p class="sub">Pilih yang lagi kamu butuh — atau iseng lihat-lihat dulu juga boleh, gratis. 😄</p>
+    <div class="kat-grid" id="katGrid"></div>
+  </section>
+
+  <section id="daftar">
+    <h2>Direktori UMKM</h2>
+    <p class="sub">Strip 🎉 di kartu = promo yang lagi asik dari pemiliknya. Pencariannya pintar lho: coba ketik "kue lapis" — nanti diarahkan juga ke usaha jajanan. Usaha unggulan nongol paling atas.</p>
+    <div class="chips" id="chips"></div>
+    <div class="baris-filter">
+      <select id="filterWilayah" aria-label="Filter wilayah">
+        <option value="">Semua wilayah</option>
+      </select>
+      <select id="urutkan" aria-label="Urutkan">
+        <option value="unggulan">Urutan: Unggulan dulu</option>
+        <option value="az">Urutan: Nama A–Z</option>
+        <option value="kategori">Urutan: Kategori</option>
+      </select>
+      <span class="hasil-info" id="hasilInfo"></span>
+    </div>
+    <div class="info-pintar" id="infoPintar"></div>
+    <div class="grid" id="grid"></div>
+    <div class="kosong" id="kosong">Yah, belum ketemu 😅 Coba kata lain, atau geser kategorinya — siapa tahu jodohnya usaha itu ada di sebelah.</div>
+  </section>
+
+  <section>
+    <h2>Buat Pemilik Usaha: Gampang Banget</h2>
+    <p class="sub">Gratis. Nggak perlu jago komputer — cukup punya WhatsApp, sisanya kami yang urus.</p>
+    <div class="langkah">
+      <div><span>1️⃣</span><b>Klik tombol daftar / klaim</b>Belum terdaftar? Klik "Daftarkan Usaha — Gratis". Usahamu sudah tampil tapi bukan kamu yang daftarkan? Klik "Klaim Usaha Ini" di kartu usahamu. Dua-duanya nyambung ke WhatsApp admin.</div>
+      <div><span>2️⃣</span><b>Isi format otomatis</b>WhatsApp terbuka dengan format siap isi: nama usaha, kategori, alamat, jam buka. Tinggal lengkapi, kirim. Nggak pakai daftar akun, nggak pakai password.</div>
+      <div><span>3️⃣</span><b>Kirim foto + promo</b>Admin balas minta 1–3 foto usaha/produk, nomor WA usaha, kata kunci jualanmu (buat pencarian pintar), dan promo yang lagi asik — kalau ada. Ini juga bukti usaha itu memang milikmu.</div>
+      <div><span>4️⃣</span><b>Tayang + Terverifikasi ✔</b>Admin pasang listing-mu, maksimal 1×24 jam. Kamu dikirimi tautannya buat dicek. Cocok? Listing dapat label ✔ Terverifikasi dan pelanggan bisa langsung chat kamu.</div>
+      <div><span>5️⃣</span><b>Update kapan aja, gratis</b>Ganti foto, jam buka, atau promo? Chat admin aja, beres. Mau tampil paling depan di carousel "Promo yang Lagi Asik"? Itu slot berbayar mulai Rp25rb/bulan — sama, tinggal chat admin.</div>
+    </div>
+    <div class="cta-daftar">
+      <h2>Punya usaha di Kandis? Jangan dipendam aja 😄</h2>
+      <p>Daftarkan gratis sekarang — listing dasar gratis selamanya. Cukup kirim nama usaha, alamat, dan foto lewat WhatsApp, biar warga Kandis makin gampang nemuin usaha kamu.</p>
+      <a class="btn btn-kuning" href="https://wa.me/6282283506764?text=Halo%20Admin%20KandisKita%2C%20saya%20mau%20daftarkan%20usaha%20saya%20(gratis)" target="_blank" rel="noopener">Daftar via WhatsApp</a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <b>KandisKita</b> — Direktori UMKM Kecamatan Kandis, Kabupaten Siak, Riau.<br>
+  Dikelola dengan ☕ oleh <b>Lapak Kreatif</b>, Kandis · WhatsApp admin: 0822-8350-6764<br>
+  <span style="font-size:12.5px;opacity:.8">© 2026 KandisKita · Data awal dari sumber publik — pemilik dapat mengklaim & memperbarui listing-nya gratis</span>
+</footer>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+const KATEGORI = [
+  {id:'kuliner', nama:'Kuliner', ikon:'🍜'},
+  {id:'toko', nama:'Toko & Retail', ikon:'🏪'},
+  {id:'jasa', nama:'Jasa', ikon:'🛠️'},
+  {id:'fashion', nama:'Fashion', ikon:'👕'},
+  {id:'digital', nama:'Percetakan & Digital', ikon:'🖨️'},
+  {id:'otomotif', nama:'Otomotif', ikon:'🔧'},
+  {id:'cantik', nama:'Kesehatan & Kecantikan', ikon:'💇'},
+  {id:'tani', nama:'Pertanian & Lainnya', ikon:'🌴'},
+];
+/* DATA UMKM KandisKita v1 — Lapak Kreatif terverifikasi; lainnya data awal sumber publik, status belum diklaim. */
+const UMKM = [
+  {nama:"Lapak Kreatif", kat:'digital', wilayah:'Kandis Kota', ikon:'💌', warna:'#fef3c7', unggulan:true, terverifikasi:true,
+   jam:'Setiap hari · by WhatsApp', buka:true, alamat:'Kandis, Kec. Kandis, Kab. Siak, Riau', wa:'6282283506764', sumber:'Data pemilik (Sigit)', asli:true,
+   desc:'Undangan cetak mulai Rp600/lembar, undangan digital Rp75.000, sticker pack kustom anti air mulai Rp5.000. Pengelola KandisKita.'},
+  {nama:"Kedai Kopi Cak Kue", kat:'kuliner', wilayah:'Kandis', ikon:'☕', warna:'#ffedd5', unggulan:false, terverifikasi:false,
+   jam:'06.00–12.00 & 17.00–22.00 WIB', buka:null, alamat:'Kandis, Kec. Kandis, Kab. Siak (alamat persis belum terdata)', wa:'6282287791435', sumber:'Waze',
+   desc:'Kedai kopi di Kandis, buka dua sesi: pagi dan sore–malam.'},
+  {nama:"Warung Ayam Golek Uncle Muthu Kandis", kat:'kuliner', wilayah:'Kandis', ikon:'🍗', warna:'#fee2e2', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Kandis KM 71, samping dealer Daihatsu, sebelah Alfamart', wa:'6282285451695', sumber:'Facebook penjual',
+   desc:'Warung makan: ayam golek/bakar, ayam geprek, ikan bakar, seafood, nasi goreng. Nasi ayam geprek mulai Rp13rb (info postingan penjual).'},
+  {nama:"Byil Castel's Bakery Cafe", kat:'kuliner', wilayah:'Kandis Kota', ikon:'🍰', warna:'#fce7f3', unggulan:false, terverifikasi:false,
+   jam:'10.00–20.00 WIB (tutup Jumat)', buka:null, alamat:'Jl. Sudirman, depan SMK Plus Cendekia, Kandis', wa:'', sumber:'Instagram @byil.castels',
+   desc:'Bakery cafe: cheesecake, garlic bread, minuman botol. Biscoff cheesecake Rp12rb, garlic bread Rp15rb (info IG penjual).'},
+  {nama:"Nasi Ayam Geprek Elan", kat:'kuliner', wilayah:'Kandis Kota', ikon:'🍗', warna:'#fef9c3', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Jenderal Sudirman KM 72, dekat SMPN 1 Kandis', wa:'', sumber:'Facebook',
+   desc:'Nasi ayam geprek (cabang Dumai), buka Sep 2026. Nasi geprek Rp10–12rb, es teh Rp3rb.'},
+  {nama:"D'Celup Ayam Geprek (Intan Store)", kat:'kuliner', wilayah:'Kandis', ikon:'🍗', warna:'#ffedd5', unggulan:false, terverifikasi:false,
+   jam:'Tutup pukul 22.00', buka:null, alamat:'Depan Intan Store, seberang Capella Honda, Kandis', wa:'', sumber:'Facebook penjual',
+   desc:'Ayam geprek mulai Rp13rb/porsi, terima pesanan katering acara.'},
+  {nama:"Penyetan Sambel Cobek 77", kat:'kuliner', wilayah:'Kandis', ikon:'🌶️', warna:'#fee2e2', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Parkiran Bianglala Waterpark, Jl. Lintas Pekanbaru–Duri KM 77, Kandis', wa:'', sumber:'Instagram @bianglala.waterpark',
+   desc:'Penyetan serba ayam: geprek, bakar madu, rica-rica, lado ijo. Paket serba ayam Rp25rb gratis nasi (makan di tempat).'},
+  {nama:"Lucky Coffee Premium", kat:'kuliner', wilayah:'Kandis', ikon:'🧋', warna:'#e0e7ff', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'KM 74, halaman Ampera Pangeran, Kandis', wa:'', sumber:'Instagram @luckycoffeepremium',
+   desc:'Gerai es kopi susu, mulai Rp10rb.'},
+  {nama:"Warung Hoki Bu Ayu Wahyudi", kat:'kuliner', wilayah:'Kandis', ikon:'🍜', warna:'#dcfce7', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'KM 77, Kandis', wa:'', sumber:'Facebook',
+   desc:'Bakso & cendol di KM 77 Kandis.'},
+  {nama:"Mie Ayam Bakso Mas Ijo", kat:'kuliner', wilayah:'Kandis', ikon:'🍜', warna:'#d9f99d', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Simpang Gelombang, samping Alfamart, Kandis', wa:'', sumber:'Facebook',
+   desc:'Mie ayam & bakso di Simpang Gelombang.'},
+  {nama:"Kandis Stationary", kat:'digital', wilayah:'Simpang Belutu', ikon:'🖨️', warna:'#dbeafe', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Pekanbaru–Duri Km 71, Simpang Belutu', wa:'6282284540710', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'ATK, fotocopy, percetakan & stempel.'},
+  {nama:"Percetakan Bina Cantik Kandis", kat:'digital', wilayah:'Kandis Kota', ikon:'🖨️', warna:'#ede9fe', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Sumatra, Kandis Kota', wa:'628126103204', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Percetakan, fotocopy & stationary. (Nomor dari sumber digitnya lebih pendek dari lazim — verifikasi ekstra saat klaim.)'},
+  {nama:"Fhoto Copy & Percetakan Yelny'zy", kat:'digital', wilayah:'Telaga Sam Sam', ikon:'📄', warna:'#cffafe', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Pekanbaru–Duri Km 72, Telaga Sam Sam', wa:'6285272324333', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Fotocopy & percetakan.'},
+  {nama:"Plaza Printing Kandis", kat:'digital', wilayah:'Simpang Belutu', ikon:'🖨️', warna:'#fef3c7', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Simpang Belutu, Kandis', wa:'6282392148093', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Printing & percetakan.'},
+  {nama:"Fauzi Photo", kat:'digital', wilayah:'Kandis Kota', ikon:'📸', warna:'#fce7f3', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Pekanbaru–Duri Km 80, Pasar Minggu, Kandis Kota', wa:'6282283896851', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Studio foto & fotocopy di Pasar Minggu.'},
+  {nama:"Rumah Laundry Kandis Express Outlet 2", kat:'jasa', wilayah:'Telaga Sam Sam', ikon:'🧺', warna:'#dbeafe', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Pekanbaru–Duri Km 72, seberang Bank Riau Kepri, Telaga Sam Sam', wa:'6285227222202', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Laundry / jasa cuci pakaian.'},
+  {nama:"Bengkel Mitra Isuzu – Libra Motor", kat:'otomotif', wilayah:'Simpang Belutu', ikon:'🔧', warna:'#e5e7eb', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Pekanbaru–Duri Km 75, Simpang Belutu', wa:'6281266288167', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Bengkel motor.'},
+  {nama:"Bengkel Motor Aan Servis", kat:'otomotif', wilayah:'Simpang Belutu', ikon:'🏍️', warna:'#fef9c3', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Sultan Syarif Qasim, Simpang Belutu', wa:'6282388844995', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Bengkel & servis motor.'},
+  {nama:"Allia Salon", kat:'cantik', wilayah:'Simpang Belutu', ikon:'💇', warna:'#fce7f3', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Sumatra No.72, Simpang Belutu', wa:'6282219862240', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Salon kecantikan.'},
+  {nama:"Queen Salon", kat:'cantik', wilayah:'Kandis Kota', ikon:'👑', warna:'#ede9fe', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Kandis Kota, Kandis', wa:'6281216480173', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Salon kecantikan.'},
+  {nama:"Lidya Beauty Salon", kat:'cantik', wilayah:'Telaga Sam Sam', ikon:'💅', warna:'#ffe4e6', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Telaga Sam Sam, Kandis', wa:'6282287303534', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Salon kecantikan.'},
+  {nama:"Ridayanti Beauty Studio", kat:'cantik', wilayah:'Kandis Kota', ikon:'💄', warna:'#fef3c7', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Kandis Kota, Kandis', wa:'6282388573936', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Beauty studio / salon kecantikan.'},
+  {nama:"Toko Drwskincare Mely", kat:'cantik', wilayah:'Simpang Belutu', ikon:'🧴', warna:'#dcfce7', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Perumahan Satya Insani, Simpang Belutu', wa:'6285271478192', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Toko skincare (Drwskincare).'},
+  {nama:"Tanjung Jaya Electronic", kat:'toko', wilayah:'Telaga Sam Sam', ikon:'🔌', warna:'#e0e7ff', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Raya Pekanbaru–Duri Km 72, Telaga Sam Sam', wa:'6281365515062', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Toko elektronik & listrik.'},
+  {nama:"Toko Cahaya Listrik", kat:'toko', wilayah:'Telaga Sam Sam', ikon:'💡', warna:'#fef9c3', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Pekanbaru–Duri Km 72, Telaga Sam Sam', wa:'6285265234575', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Toko listrik & elektronik.'},
+  {nama:"Bintang Cakra", kat:'toko', wilayah:'Sam Sam', ikon:'🔌', warna:'#dbeafe', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Km 71 Telaga, Sam Sam', wa:'6281378212388', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Toko listrik.'},
+  {nama:"Sentral Elektronik", kat:'toko', wilayah:'Kandis Kota', ikon:'📺', warna:'#cffafe', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Kandis Kota, Kandis', wa:'6282260930223', sumber:'carialamat.biz.id (agregator Maps)',
+   desc:'Toko elektronik.'},
+  {nama:"Toko Dona Fashion", kat:'fashion', wilayah:'Kandis', ikon:'👗', warna:'#fce7f3', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Pekanbaru–Duri KM 80, Kandis', wa:'', sumber:'Skripsi UIN Suska Riau (repository)',
+   desc:'Toko pakaian wanita, pria & anak-anak, berdiri sejak 2015.'},
+  {nama:"Istana Perabot", kat:'toko', wilayah:'Kandis', ikon:'🛋️', warna:'#ffedd5', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Jl. Lintas Pekanbaru–Duri Km 73, Kandis', wa:'', sumber:'Direktori Toko Panen',
+   desc:'Furniture & perabot rumah tangga.'},
+  {nama:"Capella Honda – AHASS Kandis", kat:'otomotif', wilayah:'Kandis', ikon:'🏍️', warna:'#fee2e2', unggulan:false, terverifikasi:false,
+   jam:'Belum terdata — tanya lewat chat', buka:null, alamat:'Kandis (alamat rinci belum terdata)', wa:'', sumber:'jurnalpekan.com',
+   desc:'Dealer & bengkel resmi Honda (AHASS) cabang Kandis.'}
+];
+/* PROMO: opsional, diisi pemilik usaha — kosong = tidak tampil apa-apa di card */
+const PROMO = {
+  'Lapak Kreatif':'GRATIS undangan digital untuk pemesanan cetak Minimalis min. 1.000 lembar',
+};
+/* TAG: kata kunci produk/jasa per usaha — bahan pencarian pintar */
+const TAG = {
+  "Lapak Kreatif":"undangan nikah pernikahan wedding khitanan cetak stiker sticker amplop digital undangan online hajatan pesta",
+  "Kedai Kopi Cak Kue":"kopi ngopi warung kopi sarapan nongkrong cemilan",
+  "Warung Ayam Golek Uncle Muthu Kandis":"ayam geprek ayam bakar ikan bakar seafood nasi goreng makan kuliner",
+  "Byil Castel's Bakery Cafe":"kue bolu cheesecake bakery jajanan cemilan oleh-oleh roti kue lapis",
+  "Nasi Ayam Geprek Elan":"ayam geprek nasi makan siang kuliner pedas",
+  "D'Celup Ayam Geprek (Intan Store)":"ayam geprek katering acara makan kuliner",
+  "Penyetan Sambel Cobek 77":"penyetan ayam geprek ayam bakar makan kuliner pedas",
+  "Lucky Coffee Premium":"kopi es kopi susu ngopi minuman cemilan",
+  "Warung Hoki Bu Ayu Wahyudi":"bakso cendol mie makan kuliner jajanan",
+  "Mie Ayam Bakso Mas Ijo":"mie ayam bakso makan kuliner",
+  "Kandis Stationary":"fotocopy percetakan atk stempel print kertas",
+  "Percetakan Bina Cantik Kandis":"percetakan fotocopy stationary print undangan",
+  "Fhoto Copy & Percetakan Yelny'zy":"fotocopy percetakan print atk",
+  "Plaza Printing Kandis":"printing percetakan fotocopy banner",
+  "Fauzi Photo":"foto studio pas foto fotocopy cetak foto",
+  "Rumah Laundry Kandis Express Outlet 2":"laundry cuci baju setrika kiloan pakaian",
+  "Bengkel Mitra Isuzu – Libra Motor":"bengkel motor servis oli tambal ban mogok kendaraan",
+  "Bengkel Motor Aan Servis":"bengkel motor servis oli tambal ban mogok",
+  "Allia Salon":"salon potong rambut creambath smoothing makeup kecantikan",
+  "Queen Salon":"salon rambut makeup kecantikan",
+  "Lidya Beauty Salon":"salon kecantikan rambut makeup",
+  "Ridayanti Beauty Studio":"salon makeup kecantikan studio",
+  "Toko Drwskincare Mely":"skincare kecantikan kosmetik perawatan wajah toko",
+  "Tanjung Jaya Electronic":"elektronik listrik kabel lampu toko",
+  "Toko Cahaya Listrik":"listrik elektronik lampu kabel toko",
+  "Bintang Cakra":"listrik elektronik toko kabel",
+  "Sentral Elektronik":"elektronik tv kulkas mesin cuci toko",
+  "Toko Dona Fashion":"pakaian baju fashion wanita anak toko",
+  "Istana Perabot":"furniture perabot mebel lemari kasur rumah toko",
+  "Capella Honda – AHASS Kandis":"honda bengkel resmi servis motor dealer sparepart"
+};
+UMKM.forEach(u=>{ u.promo = PROMO[u.nama] || ''; u.tags = TAG[u.nama] || ''; });
+
+/* KAMUS KAITAN KATA — inti pencarian pintar:
+   satu kata/frasa dikaitkan ke konsep lain, mis. "kue lapis" -> jajanan, kue, cemilan, snack box */
+const KAITAN = {
+  'kue lapis':['jajanan','kue','cemilan','bolu','snack','oleh-oleh','jajanan pasar'],
+  'kue':['jajanan','cemilan','bolu','snack box','oleh-oleh'],
+  'jajanan':['kue','cemilan','snack','gorengan','jajanan pasar','bolu'],
+  'cemilan':['jajanan','kue','gorengan','snack','kopi'],
+  'snack box':['kue','jajanan','acara','hajatan','pengajian'],
+  'hajatan':['undangan','snack box','kue','acara','pesta'],
+  'nikah':['undangan','pernikahan','makeup','salon','kue','pesta'],
+  'pernikahan':['undangan','nikah','wedding','makeup','kue'],
+  'pengantin':['undangan','makeup','salon'],
+  'makan':['kuliner','bakso','mie ayam','warung','kopi','makanan'],
+  'lapar':['makan','bakso','kuliner','warung makan'],
+  'sarapan':['lontong','kopi','warung','kue'],
+  'ngopi':['kopi','warung','nongkrong','cemilan'],
+  'motor mogok':['bengkel','servis','tambal ban','sparepart'],
+  'mogok':['bengkel','servis motor'],
+  'ban bocor':['tambal ban','bengkel'],
+  'baju kotor':['laundry','cuci','setrika'],
+  'cuci baju':['laundry','setrika','kiloan'],
+  'rambut':['salon','potong','creambath','smoothing'],
+  'pulsa habis':['pulsa','konter','paket data'],
+  'kuota':['paket data','pulsa','konter hp'],
+  'sakit':['apotek','obat','kesehatan'],
+  'pupuk':['tani','sawit','kebun','pakan'],
+  'pindahan':['angkut','mobil bak','sewa pickup'],
+  'oleh-oleh':['kue','jajanan','cemilan'],
+  'acara':['snack box','undangan','kue','jajanan'],
+};
+function perluasKueri(q){
+  const terkait = new Set(); const frasaKetemu = [];
+  const qn = ' '+q.toLowerCase()+' ';
+  for(const [frasa, daftar] of Object.entries(KAITAN)){
+    if(qn.includes(' '+frasa+' ') || q.includes(frasa)){
+      daftar.forEach(t=>terkait.add(t)); frasaKetemu.push(frasa);
+    }
+  }
+  q.split(/\s+/).filter(Boolean).forEach(tok=>{
+    if(KAITAN[tok]) KAITAN[tok].forEach(t=>terkait.add(t));
+  });
+  return {terkait:[...terkait], frasaKetemu};
+}
+function skorCari(u, q, terkait){
+  const nama=u.nama.toLowerCase(), tags=(u.tags||'').toLowerCase(),
+        kat=namaKat(u.kat).toLowerCase(), semua=(nama+' '+tags+' '+kat+' '+u.wilayah+' '+u.desc+' '+(u.promo||'')).toLowerCase();
+  let s=0;
+  if(nama.includes(q)) s+=10;
+  q.split(/\s+/).filter(Boolean).forEach(tok=>{
+    if(nama.includes(tok)) s+=6;
+    if(tags.includes(tok)) s+=4;
+    if(semua.includes(tok)) s+=2;
+  });
+  terkait.forEach(t=>{
+    if(tags.includes(t)) s+=5;
+    else if(semua.includes(t)) s+=3;
+    if(nama.includes(t)) s+=4;
+  });
+  if(u.promo && semua.includes(q)) s+=1;
+  return s;
+}
+/* SLIDE CAROUSEL PROMO UNGGULAN — slot berbayar */
+const SLIDE_PROMO = [
+  {idxNama:'Lapak Kreatif', bg:'linear-gradient(120deg,#92400e,#b45309 55%,#d97706)', teksPromo:'GRATIS undangan digital untuk pemesanan cetak Minimalis min. 1.000 lembar — plus undangan digital pernikahan & khitanan Rp75rb.'},
+  {iklanSlot:true, bg:'linear-gradient(120deg,#9d174d,#db2777 55%,#f472b6)', kat:'Slot 2 — Masih Kosong!', judul:'Giliran usaha kulinermu di sini 🍜', teksPromo:'Slot carousel paling depan KandisKita. Teks promo ditulis kamu sendiri — yang lagi asik di usahamu, tampil di sini.', tombol:'Ambil Slot Ini'},
+  {iklanSlot:true, bg:'linear-gradient(120deg,#1e40af,#2563eb 55%,#38bdf8)', kat:'Slot 3 — Masih Kosong!', judul:'Bengkel, salon, laundry? Bisa banget 🔧', teksPromo:'Pengunjung KandisKita lihat carousel ini duluan sebelum kategori lain. Jangan sampai diambil tetangga duluan.', tombol:'Ambil Slot Ini'},
+  {iklanSlot:true, bg:'linear-gradient(120deg,#14532d,#166534 55%,#22c55e)', kat:'Slot Tersedia', judul:'Usaha Anda di sini?', teksPromo:'Tampil di posisi paling atas KandisKita, dilihat semua pengunjung. Slot promo unggulan mulai Rp25.000/bulan (usulan).', tombol:'Pasang Promo via WA'},
+];
+function bangunCarousel(){
+  const track=document.getElementById('trackPromo');
+  track.innerHTML = SLIDE_PROMO.map((s,i)=>{
+    if(s.iklanSlot) return `<div class="slide" style="background:${s.bg}" onclick="window.open('https://wa.me/6282283506764?text=${encodeURIComponent('Halo Admin KandisKita, saya mau tanya slot Promo Unggulan berbayar.')}','_blank')">
+      <span class="iklan">SLOT BERBAYAR</span><span class="kat">${s.kat}</span><h3>${s.judul}</h3>
+      <p class="promo-besar">${s.teksPromo}</p><span class="tombol">${s.tombol} →</span></div>`;
+    const u = UMKM.find(x=>x.nama===s.idxNama); if(!u) return '';
+    const idx = UMKM.indexOf(u);
+    return `<div class="slide" style="background:${s.bg}" onclick="bukaDetail(${idx})">
+      <span class="iklan">PROMO UNGGULAN</span><span class="kat">${namaKat(u.kat)} · ${u.wilayah}</span><h3>${u.ikon} ${u.nama}</h3>
+      <p class="promo-besar">${s.teksPromo}</p><span class="wil">🎉 Promo yang lagi asik dari pemiliknya — klik buat detail & chat WA</span>
+      <span class="tombol">Lihat Usaha →</span></div>`;
+  }).join('');
+  document.getElementById('dotsPromo').innerHTML = SLIDE_PROMO.map((_,i)=>`<button class="dot ${i===0?'aktif':''}" onclick="keSlide(${i})" aria-label="Ke promo ${i+1}"></button>`).join('');
+  track.addEventListener('scroll', ()=>{
+    const i = Math.round(track.scrollLeft / (track.firstElementChild ? track.firstElementChild.offsetWidth+14 : 1));
+    document.querySelectorAll('#dotsPromo .dot').forEach((d,j)=>d.classList.toggle('aktif', j===Math.min(i,SLIDE_PROMO.length-1)));
+  });
+  setInterval(()=>{ if(!document.hidden) geserPromo(1,true); }, 5000);
+}
+function lebarSlide(){ const t=document.getElementById('trackPromo'); return t.firstElementChild ? t.firstElementChild.offsetWidth+14 : 300; }
+function keSlide(i){ document.getElementById('trackPromo').scrollTo({left:i*lebarSlide(),behavior:'smooth'}); }
+function geserPromo(dir,otomatis){
+  const t=document.getElementById('trackPromo'); const max=t.scrollWidth - t.clientWidth;
+  let next = t.scrollLeft + dir*lebarSlide();
+  if(next > max + 10) next = 0;
+  if(next < -10) next = max;
+  t.scrollTo({left:next,behavior:'smooth'});
+}
+const namaKat = id => (KATEGORI.find(k=>k.id===id)||{}).nama || id;
+let katAktif = '';
+
+function bangunKategori(){
+  document.getElementById('katGrid').innerHTML = KATEGORI.map(k=>{
+    const n = UMKM.filter(u=>u.kat===k.id).length;
+    return `<div class="kat" onclick="pilihKat('${k.id}')"><span class="ic">${k.ikon}</span>${k.nama}<div class="n">${n} usaha*</div></div>`;
+  }).join('');
+  document.getElementById('chips').innerHTML =
+    `<button class="chip ${katAktif===''?'aktif':''}" onclick="pilihKat('')">Semua</button>` +
+    KATEGORI.map(k=>`<button class="chip ${katAktif===k.id?'aktif':''}" onclick="pilihKat('${k.id}')">${k.ikon} ${k.nama}</button>`).join('');
+  const wilayah = [...new Set(UMKM.map(u=>u.wilayah))].sort();
+  const sel = document.getElementById('filterWilayah');
+  const val = sel.value;
+  sel.innerHTML = '<option value="">Semua wilayah</option>' + wilayah.map(w=>`<option ${w===val?'selected':''}>${w}</option>`).join('');
+}
+function pilihKat(id){ katAktif = (katAktif===id && id!=='') ? '' : id; tampil(); document.getElementById('daftar').scrollIntoView({behavior:'smooth'}); }
+
+function tampil(){
+  bangunKategori();
+  const q = document.getElementById('inputCari').value.trim().toLowerCase();
+  const w = document.getElementById('filterWilayah').value;
+  const urut = document.getElementById('urutkan').value;
+  const pintar = q ? perluasKueri(q) : {terkait:[], frasaKetemu:[]};
+  let list = UMKM.filter(u => (!katAktif || u.kat===katAktif) && (!w || u.wilayah===w));
+  if(q){
+    list = list.map(u=>({u, s:skorCari(u, q, pintar.terkait)})).filter(x=>x.s>0)
+               .sort((a,b)=>b.s-a.s).map(x=>x.u);
+  }
+  const infoP = document.getElementById('infoPintar');
+  if(q && pintar.terkait.length){
+    infoP.innerHTML = `🤖 <b>Pencarian pintar:</b> “${q}” dikaitkan juga dengan <b>${pintar.terkait.slice(0,6).join(', ')}</b> — hasil di bawah mencakup usaha terkait, bukan hanya yang namanya persis sama.`;
+    infoP.classList.add('tampil');
+  } else infoP.classList.remove('tampil');
+  if(!q){
+    if(urut==='az') list.sort((a,b)=>a.nama.localeCompare(b.nama));
+    else if(urut==='kategori') list.sort((a,b)=>namaKat(a.kat).localeCompare(namaKat(b.kat)));
+    else list.sort((a,b)=>(b.unggulan-a.unggulan)||(b.terverifikasi-a.terverifikasi));
+  }
+  document.getElementById('statTotal').textContent = UMKM.length;
+  document.getElementById('hasilInfo').textContent = `Menampilkan ${list.length} dari ${UMKM.length} usaha`;
+  document.getElementById('kosong').style.display = list.length ? 'none' : 'block';
+  document.getElementById('grid').innerHTML = list.map(u=>{
+    const i = UMKM.indexOf(u);
+    return `<article class="card" onclick="bukaDetail(${i})">
+      <div class="thumb" style="background:${u.warna}">${u.ikon}
+        ${u.unggulan?'<span class="badge">⭐ UNGGULAN</span>':''}
+        ${u.terverifikasi?'<span class="badge badge-verif">✔ Terverifikasi</span>':''}
+      </div>
+      <div class="isi">
+        <span class="tag">${namaKat(u.kat)}</span>
+        <h3>${u.nama}</h3>
+        <p class="desc">${u.desc}</p>
+        ${u.promo?`<div class="promo-strip">🎉<span><b>Promo yang lagi asik:</b> ${u.promo}</span></div>`:''}
+        <span class="meta">📍 ${u.wilayah} · ${u.alamat.split(',')[0]}</span>
+        <span class="buka ${u.buka===null?'':(u.buka?'on':'off')}">${u.buka===null?'🕐 '+u.jam:(u.buka?'● Sedang buka':'● Tutup')+' · '+u.jam}</span>
+      </div></article>`;
+  }).join('');
+}
+function bukaDetail(i){
+  const u = UMKM[i];
+  const waBtn = u.wa
+    ? `<a class="btn btn-wa" href="https://wa.me/${u.wa}?text=${encodeURIComponent('Halo '+u.nama+', saya dapat nomor ini dari KandisKita.')}" target="_blank" rel="noopener">💬 Chat WhatsApp</a>`
+    : `<a class="btn btn-wa" style="opacity:.55;pointer-events:none">💬 Chat WhatsApp</a>`;
+  document.getElementById('modal').innerHTML = `
+    <div style="position:relative">
+      <div class="thumb" style="background:${u.warna}">${u.ikon}${u.unggulan?'<span class="badge">⭐ UNGGULAN</span>':''}</div>
+      <button class="tutup" onclick="tutupDetail()" aria-label="Tutup">✕</button>
+    </div>
+    <div class="m-isi">
+      <span class="tag">${namaKat(u.kat)} · ${u.wilayah}</span>
+      <h3>${u.nama}</h3>
+      <p class="desc">${u.desc}</p>
+      ${u.promo?`<div class="promo-box"><b>🎉 PROMO YANG LAGI ASIK</b>${u.promo}</div>`:''}
+      <table>
+        <tr><td>Alamat</td><td>${u.alamat}</td></tr>
+        <tr><td>Jam buka</td><td>${u.buka===null ? u.jam : u.jam+' — <b style="color:'+(u.buka?'#16a34a':'#dc2626')+'">'+(u.buka?'Sedang buka':'Tutup')+'</b>'}</td></tr>
+        <tr><td>Status</td><td>${u.terverifikasi?'✔ Terverifikasi admin KandisKita':'Belum diklaim pemilik'}</td></tr>
+      </table>
+      <div class="m-tombol">
+        ${waBtn}
+        <a class="btn btn-garis" href="https://www.google.com/maps/search/${encodeURIComponent(u.nama.replace(' (Contoh)','')+' Kandis Siak')}" target="_blank" rel="noopener">📍 Lihat di Maps</a>
+      </div>
+      ${!u.terverifikasi ? `<div class="m-tombol" style="margin-top:10px"><a class="btn btn-kuning" href="https://wa.me/6282283506764?text=${encodeURIComponent('Halo Admin KandisKita, saya pemilik usaha '+u.nama+'. Saya mau KLAIM listing usaha saya.')}" target="_blank" rel="noopener">🙋 Ini Usaha Saya — Klaim Gratis</a></div>` : ''}
+      ${u.asli ? '' : '<div class="catatan">📚 Data awal hasil riset dari sumber publik ('+(u.sumber||'web')+') — status <b>belum diklaim</b>. Nomor & jam akan diverifikasi ulang ke pemilik saat klaim.</div>'}
+      ${u.asli ? '<div class="catatan">✔ Listing asli: <b>Lapak Kreatif</b> — undangan cetak & digital Kandis, pengelola KandisKita.</div>' : ''}
+    </div>`;
+  document.getElementById('overlay').classList.add('tampil');
+}
+function tutupDetail(){ document.getElementById('overlay').classList.remove('tampil'); }
+document.getElementById('overlay').addEventListener('click', e=>{ if(e.target.id==='overlay') tutupDetail(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') tutupDetail(); });
+document.getElementById('formCari').addEventListener('submit', e=>{ e.preventDefault(); tampil(); document.getElementById('daftar').scrollIntoView({behavior:'smooth'}); });
+document.getElementById('inputCari').addEventListener('input', tampil);
+document.getElementById('filterWilayah').addEventListener('change', tampil);
+document.getElementById('urutkan').addEventListener('change', tampil);
+bangunCarousel();
+tampil();
+</script>
+</body>
+</html>

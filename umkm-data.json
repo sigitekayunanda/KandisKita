@@ -26,24 +26,25 @@
     {
      "nama": "Undangan Cetak",
      "keterangan": "Cetak undangan Minimalis mulai Rp600/lembar — GRATIS undangan digital untuk pemesanan min. 1.000 lembar.",
-     "foto": null
+     "foto": "assets/lapak-cetak.jpg"
     },
     {
      "nama": "Undangan Digital",
      "keterangan": "Paket Rp75.000: nama tamu personal, RSVP & ucapan, amplop digital, galeri foto, musik, hitung mundur, peta lokasi.",
-     "foto": null
+     "foto": "assets/lapak-digital.jpg"
     },
     {
      "nama": "Sticker Pack Kustom",
      "keterangan": "Stiker kustom sesuai desainmu — warna cerah, anti air, mulai Rp5.000.",
-     "foto": null
+     "foto": "assets/lapak-stiker.jpg"
     },
     {
      "nama": "Undangan Khitanan",
      "keterangan": "Undangan cetak & digital untuk tasyakuran khitanan.",
-     "foto": null
+     "foto": "assets/lapak-khitanan.jpg"
     }
-   ]
+   ],
+   "foto": "assets/lapak-utama.jpg"
   },
   {
    "nama": "Kedai Kopi Cak Kue",

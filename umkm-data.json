@@ -23,10 +23,26 @@
    "asli": true,
    "buka": true,
    "etalase": [
-    "Undangan Cetak",
-    "Undangan Digital",
-    "Sticker Pack Kustom",
-    "Undangan Khitanan"
+    {
+     "nama": "Undangan Cetak",
+     "keterangan": "Cetak undangan Minimalis mulai Rp600/lembar — GRATIS undangan digital untuk pemesanan min. 1.000 lembar.",
+     "foto": null
+    },
+    {
+     "nama": "Undangan Digital",
+     "keterangan": "Paket Rp75.000: nama tamu personal, RSVP & ucapan, amplop digital, galeri foto, musik, hitung mundur, peta lokasi.",
+     "foto": null
+    },
+    {
+     "nama": "Sticker Pack Kustom",
+     "keterangan": "Stiker kustom sesuai desainmu — warna cerah, anti air, mulai Rp5.000.",
+     "foto": null
+    },
+    {
+     "nama": "Undangan Khitanan",
+     "keterangan": "Undangan cetak & digital untuk tasyakuran khitanan.",
+     "foto": null
+    }
    ]
   },
   {
@@ -47,9 +63,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Kopi",
-    "Sarapan Pagi",
-    "Tempat Nongkrong"
+    {
+     "nama": "Kopi",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Sarapan Pagi",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Tempat Nongkrong",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -70,11 +98,31 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Ayam Golek / Bakar",
-    "Ayam Geprek",
-    "Ikan Bakar",
-    "Seafood",
-    "Nasi Goreng"
+    {
+     "nama": "Ayam Golek / Bakar",
+     "keterangan": "Menu andalan — paling sering dipuji pelanggan.",
+     "foto": null
+    },
+    {
+     "nama": "Ayam Geprek",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Ikan Bakar",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Seafood",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Nasi Goreng",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -95,10 +143,26 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Cheesecake",
-    "Garlic Bread",
-    "Kue & Bolu",
-    "Minuman Botol"
+    {
+     "nama": "Cheesecake",
+     "keterangan": "Menu yang paling sering disebut pelanggan.",
+     "foto": null
+    },
+    {
+     "nama": "Garlic Bread",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Kue & Bolu",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Minuman Botol",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -119,8 +183,16 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Nasi Ayam Geprek",
-    "Es Teh"
+    {
+     "nama": "Nasi Ayam Geprek",
+     "keterangan": "Paket nasi ayam geprek — gratis es teh.",
+     "foto": null
+    },
+    {
+     "nama": "Es Teh",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -141,8 +213,16 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Ayam Geprek",
-    "Katering Acara"
+    {
+     "nama": "Ayam Geprek",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Katering Acara",
+     "keterangan": "Menerima pesanan konsumsi untuk acara.",
+     "foto": null
+    }
    ]
   },
   {
@@ -163,10 +243,26 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Penyetan Ayam",
-    "Ayam Bakar Madu",
-    "Rica-Rica",
-    "Lado Ijo"
+    {
+     "nama": "Penyetan Ayam",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Ayam Bakar Madu",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Rica-Rica",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Lado Ijo",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -187,8 +283,16 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Es Kopi Susu",
-    "Minuman Kopi"
+    {
+     "nama": "Es Kopi Susu",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Minuman Kopi",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -209,8 +313,16 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Bakso",
-    "Cendol"
+    {
+     "nama": "Bakso",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Cendol",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -231,8 +343,16 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Mie Ayam",
-    "Bakso"
+    {
+     "nama": "Mie Ayam",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Bakso",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -253,10 +373,26 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "ATK",
-    "Fotocopy",
-    "Percetakan",
-    "Stempel"
+    {
+     "nama": "ATK",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Fotocopy",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Percetakan",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Stempel",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -277,9 +413,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Percetakan",
-    "Fotocopy",
-    "Stationary"
+    {
+     "nama": "Percetakan",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Fotocopy",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Stationary",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -300,8 +448,16 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Fotocopy",
-    "Percetakan"
+    {
+     "nama": "Fotocopy",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Percetakan",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -322,9 +478,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Printing",
-    "Percetakan",
-    "Banner"
+    {
+     "nama": "Printing",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Percetakan",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Banner",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -345,9 +513,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Pas Foto",
-    "Cetak Foto",
-    "Fotocopy"
+    {
+     "nama": "Pas Foto",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Cetak Foto",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Fotocopy",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -368,8 +548,16 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Laundry Pakaian",
-    "Cuci & Setrika"
+    {
+     "nama": "Laundry Pakaian",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Cuci & Setrika",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -390,9 +578,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Servis Motor",
-    "Perbaikan",
-    "Sparepart"
+    {
+     "nama": "Servis Motor",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Perbaikan",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Sparepart",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -413,9 +613,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Servis Motor",
-    "Tambal Ban",
-    "Ganti Oli"
+    {
+     "nama": "Servis Motor",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Tambal Ban",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Ganti Oli",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -436,9 +648,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Potong Rambut",
-    "Perawatan Rambut",
-    "Makeup"
+    {
+     "nama": "Potong Rambut",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Perawatan Rambut",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Makeup",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -459,9 +683,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Potong Rambut",
-    "Creambath",
-    "Makeup"
+    {
+     "nama": "Potong Rambut",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Creambath",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Makeup",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -482,9 +718,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Perawatan Rambut",
-    "Makeup",
-    "Salon Kecantikan"
+    {
+     "nama": "Perawatan Rambut",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Makeup",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Salon Kecantikan",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -505,9 +753,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Makeup",
-    "Perawatan Kecantikan",
-    "Salon"
+    {
+     "nama": "Makeup",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Perawatan Kecantikan",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Salon",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -528,9 +788,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Skincare Drwskincare",
-    "Perawatan Wajah",
-    "Kosmetik"
+    {
+     "nama": "Skincare Drwskincare",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Perawatan Wajah",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Kosmetik",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -551,9 +823,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Alat Listrik",
-    "Elektronik",
-    "Kabel & Lampu"
+    {
+     "nama": "Alat Listrik",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Elektronik",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Kabel & Lampu",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -574,9 +858,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Alat Listrik",
-    "Lampu",
-    "Kabel"
+    {
+     "nama": "Alat Listrik",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Lampu",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Kabel",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -597,8 +893,16 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Alat Listrik",
-    "Kabel & Lampu"
+    {
+     "nama": "Alat Listrik",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Kabel & Lampu",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -619,9 +923,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Elektronik Rumah Tangga",
-    "TV",
-    "Peralatan Listrik"
+    {
+     "nama": "Elektronik Rumah Tangga",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "TV",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Peralatan Listrik",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -642,9 +958,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Pakaian Wanita",
-    "Pakaian Pria",
-    "Pakaian Anak"
+    {
+     "nama": "Pakaian Wanita",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Pakaian Pria",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Pakaian Anak",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -665,9 +993,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Furniture",
-    "Lemari",
-    "Perabot Rumah Tangga"
+    {
+     "nama": "Furniture",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Lemari",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Perabot Rumah Tangga",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   },
   {
@@ -688,9 +1028,21 @@
    "terverifikasi": false,
    "buka": null,
    "etalase": [
-    "Servis Resmi Honda",
-    "Sparepart Asli",
-    "Ganti Oli"
+    {
+     "nama": "Servis Resmi Honda",
+     "keterangan": "Bengkel resmi Honda (AHASS).",
+     "foto": null
+    },
+    {
+     "nama": "Sparepart Asli",
+     "keterangan": "",
+     "foto": null
+    },
+    {
+     "nama": "Ganti Oli",
+     "keterangan": "",
+     "foto": null
+    }
    ]
   }
  ]

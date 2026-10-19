@@ -98,6 +98,10 @@
   .dots{display:flex;gap:6px;margin-left:4px}
   .dot{width:9px;height:9px;border-radius:50%;background:#cbd5e1;border:none;cursor:pointer;padding:0}
   .dot.aktif{background:var(--hijau);transform:scale(1.25)}
+  .kopi-float{position:fixed;right:16px;bottom:16px;z-index:50;background:linear-gradient(120deg,#92400e,#d97706);color:#fff;border:none;border-radius:999px;padding:13px 20px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 8px 22px rgba(146,64,14,.45)}
+  .kopi-float:hover{transform:translateY(-2px)}
+  .dukung{background:#fff;border:1.5px solid var(--garis);border-radius:18px;padding:26px;text-align:center;margin:6px 0 10px}
+  .nomor-dana{font-size:clamp(24px,6vw,34px);font-weight:800;letter-spacing:1px;color:var(--hijau);background:var(--hijau-muda);border-radius:12px;padding:12px;margin:12px 0}
   /* modal */
   .overlay{display:none;position:fixed;inset:0;background:rgba(10,20,14,.6);z-index:60;align-items:flex-end;justify-content:center}
   .overlay.tampil{display:flex}
@@ -200,6 +204,14 @@
       <a class="btn btn-kuning" href="https://wa.me/6282283506764?text=Halo%20Admin%20KandisKita%2C%20saya%20mau%20daftarkan%20usaha%20saya%20(gratis)" target="_blank" rel="noopener">Daftar via WhatsApp</a>
     </div>
   </section>
+
+  <section>
+    <div class="dukung">
+      <h2>☕ KandisKita Gratis, Berkat Kopi (dan Kamu)</h2>
+      <p class="sub" style="margin:6px auto 16px">Website ini gratis untuk UMKM & warga Kandis — tidak ada biaya daftar, tidak ada potongan. Kalau KandisKita membantumu, boleh banget traktir admin kopi lewat DANA biar semangat terus nambah data usaha. Seikhlasnya, mulai Rp2.000 admin sudah senyum. 😄</p>
+      <button class="btn btn-kuning" onclick="bukaKopi()">☕ Traktir Kopi Admin</button>
+    </div>
+  </section>
 </div>
 
 <footer>
@@ -211,6 +223,23 @@
 <div class="overlay" id="overlay" role="dialog" aria-modal="true">
   <div class="modal" id="modal"></div>
 </div>
+<div class="overlay" id="overlayKopi" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div style="position:relative"><div class="thumb" style="background:#fef3c7">☕</div>
+    <button class="tutup" onclick="tutupKopi()" aria-label="Tutup">✕</button></div>
+    <div class="m-isi">
+      <h3>Traktir Kopi Admin ☕</h3>
+      <p class="desc">Kirim traktiranmu lewat <b>DANA</b> ke nomor admin KandisKita:</p>
+      <div class="nomor-dana">0822-8350-6764</div>
+      <div class="m-tombol">
+        <button class="btn btn-wa" id="btnSalin" onclick="salinDana()">📋 Salin Nomor DANA</button>
+        <a class="btn btn-garis" href="https://wa.me/6282283506764?text=Halo%20Admin%20KandisKita%2C%20saya%20sudah%20traktir%20kopi%20lewat%20DANA%20%E2%98%95%20Semangat%20terus%20ya!" target="_blank" rel="noopener">✅ Sudah Traktir — Kabari Admin</a>
+      </div>
+      <div class="catatan">Caranya: buka aplikasi <b>DANA</b> → Kirim → ke nomor HP → masukkan nomor di atas → nominal bebas seikhlasnya. Traktiranmu dipakai untuk biaya domain & kopi admin saat begadang memperbarui data usaha Kandis. Terima kasih banyak! 🙏</div>
+    </div>
+  </div>
+</div>
+<button class="kopi-float" onclick="bukaKopi()">☕ Traktir Kopi</button>
 
 <script>
 const KATEGORI = [
@@ -549,6 +578,15 @@ document.getElementById('inputCari').addEventListener('input', tampil);
 document.getElementById('filterWilayah').addEventListener('change', tampil);
 document.getElementById('urutkan').addEventListener('change', tampil);
 bangunCarousel();
+function bukaKopi(){ document.getElementById('overlayKopi').classList.add('tampil'); }
+function tutupKopi(){ document.getElementById('overlayKopi').classList.remove('tampil'); }
+document.getElementById('overlayKopi').addEventListener('click', e=>{ if(e.target.id==='overlayKopi') tutupKopi(); });
+function salinDana(){
+  const n='082283506764'; const b=document.getElementById('btnSalin');
+  const done=()=>{ b.textContent='✔ Nomor Tersalin!'; setTimeout(()=>b.textContent='📋 Salin Nomor DANA',2200); };
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(n).then(done).catch(()=>{ prompt('Salin nomor DANA ini:', n); }); }
+  else prompt('Salin nomor DANA ini:', n);
+}
 tampil();
 </script>
 </body>

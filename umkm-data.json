@@ -21,7 +21,13 @@
    "unggulan": true,
    "terverifikasi": true,
    "asli": true,
-   "buka": true
+   "buka": true,
+   "etalase": [
+    "Undangan Cetak",
+    "Undangan Digital",
+    "Sticker Pack Kustom",
+    "Undangan Khitanan"
+   ]
   },
   {
    "nama": "Kedai Kopi Cak Kue",
@@ -39,7 +45,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Kopi",
+    "Sarapan Pagi",
+    "Tempat Nongkrong"
+   ]
   },
   {
    "nama": "Warung Ayam Golek Uncle Muthu Kandis",
@@ -57,7 +68,14 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Ayam Golek / Bakar",
+    "Ayam Geprek",
+    "Ikan Bakar",
+    "Seafood",
+    "Nasi Goreng"
+   ]
   },
   {
    "nama": "Byil Castel's Bakery Cafe",
@@ -75,7 +93,13 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Cheesecake",
+    "Garlic Bread",
+    "Kue & Bolu",
+    "Minuman Botol"
+   ]
   },
   {
    "nama": "Nasi Ayam Geprek Elan",
@@ -93,7 +117,11 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Nasi Ayam Geprek",
+    "Es Teh"
+   ]
   },
   {
    "nama": "D'Celup Ayam Geprek (Intan Store)",
@@ -111,7 +139,11 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Ayam Geprek",
+    "Katering Acara"
+   ]
   },
   {
    "nama": "Penyetan Sambel Cobek 77",
@@ -129,7 +161,13 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Penyetan Ayam",
+    "Ayam Bakar Madu",
+    "Rica-Rica",
+    "Lado Ijo"
+   ]
   },
   {
    "nama": "Lucky Coffee Premium",
@@ -147,7 +185,11 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Es Kopi Susu",
+    "Minuman Kopi"
+   ]
   },
   {
    "nama": "Warung Hoki Bu Ayu Wahyudi",
@@ -165,7 +207,11 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Bakso",
+    "Cendol"
+   ]
   },
   {
    "nama": "Mie Ayam Bakso Mas Ijo",
@@ -183,7 +229,11 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Mie Ayam",
+    "Bakso"
+   ]
   },
   {
    "nama": "Kandis Stationary",
@@ -201,7 +251,13 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "ATK",
+    "Fotocopy",
+    "Percetakan",
+    "Stempel"
+   ]
   },
   {
    "nama": "Percetakan Bina Cantik Kandis",
@@ -219,7 +275,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Percetakan",
+    "Fotocopy",
+    "Stationary"
+   ]
   },
   {
    "nama": "Fhoto Copy & Percetakan Yelny'zy",
@@ -237,7 +298,11 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Fotocopy",
+    "Percetakan"
+   ]
   },
   {
    "nama": "Plaza Printing Kandis",
@@ -255,7 +320,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Printing",
+    "Percetakan",
+    "Banner"
+   ]
   },
   {
    "nama": "Fauzi Photo",
@@ -273,7 +343,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Pas Foto",
+    "Cetak Foto",
+    "Fotocopy"
+   ]
   },
   {
    "nama": "Rumah Laundry Kandis Express Outlet 2",
@@ -291,7 +366,11 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Laundry Pakaian",
+    "Cuci & Setrika"
+   ]
   },
   {
    "nama": "Bengkel Mitra Isuzu – Libra Motor",
@@ -309,7 +388,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Servis Motor",
+    "Perbaikan",
+    "Sparepart"
+   ]
   },
   {
    "nama": "Bengkel Motor Aan Servis",
@@ -327,7 +411,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Servis Motor",
+    "Tambal Ban",
+    "Ganti Oli"
+   ]
   },
   {
    "nama": "Allia Salon",
@@ -345,7 +434,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Potong Rambut",
+    "Perawatan Rambut",
+    "Makeup"
+   ]
   },
   {
    "nama": "Queen Salon",
@@ -363,7 +457,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Potong Rambut",
+    "Creambath",
+    "Makeup"
+   ]
   },
   {
    "nama": "Lidya Beauty Salon",
@@ -381,7 +480,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Perawatan Rambut",
+    "Makeup",
+    "Salon Kecantikan"
+   ]
   },
   {
    "nama": "Ridayanti Beauty Studio",
@@ -399,7 +503,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Makeup",
+    "Perawatan Kecantikan",
+    "Salon"
+   ]
   },
   {
    "nama": "Toko Drwskincare Mely",
@@ -417,7 +526,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Skincare Drwskincare",
+    "Perawatan Wajah",
+    "Kosmetik"
+   ]
   },
   {
    "nama": "Tanjung Jaya Electronic",
@@ -435,7 +549,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Alat Listrik",
+    "Elektronik",
+    "Kabel & Lampu"
+   ]
   },
   {
    "nama": "Toko Cahaya Listrik",
@@ -453,7 +572,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Alat Listrik",
+    "Lampu",
+    "Kabel"
+   ]
   },
   {
    "nama": "Bintang Cakra",
@@ -471,7 +595,11 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Alat Listrik",
+    "Kabel & Lampu"
+   ]
   },
   {
    "nama": "Sentral Elektronik",
@@ -489,7 +617,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Elektronik Rumah Tangga",
+    "TV",
+    "Peralatan Listrik"
+   ]
   },
   {
    "nama": "Toko Dona Fashion",
@@ -507,7 +640,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Pakaian Wanita",
+    "Pakaian Pria",
+    "Pakaian Anak"
+   ]
   },
   {
    "nama": "Istana Perabot",
@@ -525,7 +663,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Furniture",
+    "Lemari",
+    "Perabot Rumah Tangga"
+   ]
   },
   {
    "nama": "Capella Honda – AHASS Kandis",
@@ -543,7 +686,12 @@
    "promo": "",
    "unggulan": false,
    "terverifikasi": false,
-   "buka": null
+   "buka": null,
+   "etalase": [
+    "Servis Resmi Honda",
+    "Sparepart Asli",
+    "Ganti Oli"
+   ]
   }
  ]
 }

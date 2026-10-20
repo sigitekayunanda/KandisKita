@@ -44,7 +44,8 @@
      "foto": "assets/lapak-khitanan.jpg"
     }
    ],
-   "foto": "assets/lapak-utama.jpg"
+   "foto": "assets/lapak-utama.jpg",
+   "logo": "assets/lapak-logo.png"
   },
   {
    "nama": "Kedai Kopi Cak Kue",

@@ -89,6 +89,15 @@
   .thumb img.thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   #modal .thumb{height:190px;font-size:56px}
   .badge{z-index:2}
+  .sub-judul{font-size:17px;margin:6px 0 10px;color:var(--hijau)}
+  .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-bottom:6px}
+  .prod-card{display:flex;gap:11px;background:var(--putih);border:1.5px solid var(--kuning);border-radius:13px;padding:11px;cursor:pointer;align-items:flex-start;box-shadow:0 1px 4px rgba(20,83,45,.07)}
+  .prod-card:hover{border-color:var(--hijau2)}
+  .prod-foto{width:56px;height:56px;flex:none;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;background:linear-gradient(135deg,#fef9c3,#fde68a);border:1px dashed #d4a017;overflow:hidden}
+  .prod-foto img{width:100%;height:100%;object-fit:cover}
+  .prod-card b{font-size:14.5px;display:block;line-height:1.3}
+  .prod-card .toko{font-size:12px;color:var(--hijau2);font-weight:700}
+  .prod-card p{font-size:12.5px;color:#4b5563;line-height:1.4;margin-top:2px}
   .etal-list{display:flex;flex-direction:column;gap:10px;margin-top:6px}
   .etal-item{display:flex;gap:12px;align-items:flex-start;background:var(--bg);border:1px solid var(--garis);border-radius:12px;padding:10px}
   .etal-foto{width:64px;height:64px;flex:none;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(135deg,#fef9c3,#fde68a);border:1px dashed #d4a017;overflow:hidden}
@@ -159,12 +168,6 @@
     <input id="inputCari" type="search" placeholder="Cari: kue lapis, motor mogok, cuci baju, nikah…" aria-label="Cari usaha">
     <button type="submit">Gas Cari 🔍</button>
   </form>
-  <div class="stats">
-    <div><b id="statTotal">30</b>Usaha terdaftar*</div>
-    <div><b>8</b>Kategori</div>
-    <div><b>11</b>Desa / kelurahan</div>
-    <div><b>Rp0</b>Biaya daftar, selamanya</div>
-  </div>
   <p style="font-size:12px;margin-top:12px;opacity:.75">Baru mulai — target 50 usaha terverifikasi. Usahamu belum ada? Daftarkan gratis di bawah 👇</p>
 </div>
 
@@ -183,15 +186,9 @@
     </div>
   </section>
 
-  <section>
-    <h2>Jelajahi Kategori</h2>
-    <p class="sub">Pilih yang lagi kamu butuh — atau iseng lihat-lihat dulu juga boleh, gratis. 😄</p>
-    <div class="kat-grid" id="katGrid"></div>
-  </section>
-
   <section id="daftar">
     <h2>Direktori UMKM</h2>
-    <p class="sub">Strip 🎉 di kartu = promo yang lagi asik dari pemiliknya. Pencariannya pintar lho: coba ketik "kue lapis" — nanti diarahkan juga ke usaha jajanan. Usaha unggulan nongol paling atas.</p>
+    <p class="sub">Strip 🎉 di kartu = promo yang lagi asik dari pemiliknya. Pencariannya pintar: ketik barang atau jasanya (mis. "kue lapis") — etalase yang cocok tampil duluan, baru usahanya. Usaha unggulan nongol paling atas.</p>
     <div class="chips" id="chips"></div>
     <div class="baris-filter">
       <select id="filterWilayah" aria-label="Filter wilayah">
@@ -205,6 +202,8 @@
       <span class="hasil-info" id="hasilInfo"></span>
     </div>
     <div class="info-pintar" id="infoPintar"></div>
+    <div id="hasilEtalase"></div>
+    <div id="labelUsaha"></div>
     <div class="grid" id="grid"></div>
     <div class="kosong" id="kosong">Yah, belum ketemu 😅 Coba kata lain, atau geser kategorinya — siapa tahu jodohnya usaha itu ada di sebelah.</div>
   </section>
@@ -507,10 +506,6 @@ const namaKat = id => (KATEGORI.find(k=>k.id===id)||{}).nama || id;
 let katAktif = '';
 
 function bangunKategori(){
-  document.getElementById('katGrid').innerHTML = KATEGORI.map(k=>{
-    const n = UMKM.filter(u=>u.kat===k.id).length;
-    return `<div class="kat" onclick="pilihKat('${k.id}')"><span class="ic">${k.ikon}</span>${k.nama}<div class="n">${n} usaha*</div></div>`;
-  }).join('');
   document.getElementById('chips').innerHTML =
     `<button class="chip ${katAktif===''?'aktif':''}" onclick="pilihKat('')">Semua</button>` +
     KATEGORI.map(k=>`<button class="chip ${katAktif===k.id?'aktif':''}" onclick="pilihKat('${k.id}')">${k.ikon} ${k.nama}</button>`).join('');
@@ -521,6 +516,22 @@ function bangunKategori(){
 }
 function pilihKat(id){ katAktif = (katAktif===id && id!=='') ? '' : id; tampil(); document.getElementById('daftar').scrollIntoView({behavior:'smooth'}); }
 
+function skorEtalase(u, e, q, terkait){
+  const n=(e.n||'').toLowerCase(), k=(e.k||'').toLowerCase(), tags=(u.tags||'').toLowerCase();
+  let s=0;
+  if(n.includes(q)) s+=12;
+  q.split(/\s+/).filter(Boolean).forEach(tok=>{
+    if(n.includes(tok)) s+=7;
+    if(k.includes(tok)) s+=4;
+    if(tags.includes(tok)) s+=2;
+  });
+  terkait.forEach(t=>{
+    if(n.includes(t)) s+=8;
+    if(k.includes(t)) s+=4;
+    if(tags.includes(t)) s+=2;
+  });
+  return s;
+}
 function tampil(){
   bangunKategori();
   const q = document.getElementById('inputCari').value.trim().toLowerCase();
@@ -542,9 +553,20 @@ function tampil(){
     else if(urut==='kategori') list.sort((a,b)=>namaKat(a.kat).localeCompare(namaKat(b.kat)));
     else list.sort((a,b)=>(b.unggulan-a.unggulan)||(b.terverifikasi-a.terverifikasi));
   }
-  document.getElementById('statTotal').textContent = UMKM.length;
   document.getElementById('hasilInfo').textContent = `Menampilkan ${list.length} dari ${UMKM.length} usaha`;
   document.getElementById('kosong').style.display = list.length ? 'none' : 'block';
+  const wadahE = document.getElementById('hasilEtalase');
+  const labelU = document.getElementById('labelUsaha');
+  if(q){
+    const cocok = [];
+    UMKM.filter(u=>(!katAktif || u.kat===katAktif) && (!w || u.wilayah===w)).forEach(u=>{
+      (u.etalase||[]).forEach(e=>{ const s=skorEtalase(u,e,q,pintar.terkait); if(s>0) cocok.push({u,e,s}); });
+    });
+    cocok.sort((a,b)=>b.s-a.s);
+    const top = cocok.slice(0,8);
+    wadahE.innerHTML = top.length ? `<h3 class="sub-judul">🛍️ Etalase / barang & jasa yang cocok</h3><div class="prod-grid">${top.map(({u,e})=>{ const idx=UMKM.indexOf(u); return `<div class="prod-card" onclick="bukaDetail(${idx})"><div class="prod-foto">${e.f?`<img src="${e.f}" alt="${e.n}">`:u.ikon}</div><div><b>${e.n}</b><span class="toko">${u.ikon} ${u.nama} · ${u.wilayah}</span>${e.k?`<p>${e.k}</p>`:`<p style="color:#9ca3af;font-style:italic">Klik untuk detail & chat penjualnya →</p>`}</div></div>`; }).join('')}</div>` : '';
+    labelU.innerHTML = list.length ? `<h3 class="sub-judul" style="margin-top:20px">🏪 Usaha yang relevan</h3>` : '';
+  } else { wadahE.innerHTML=''; labelU.innerHTML=''; }
   document.getElementById('grid').innerHTML = list.map(u=>{
     const i = UMKM.indexOf(u);
     return `<article class="card" onclick="bukaDetail(${i})">
